@@ -1,3 +1,1 @@
-Add this file in inside 
-.config/nvim
-in root directory
+Add this file inside .config/nvim/ directory
