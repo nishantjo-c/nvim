@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -19,3 +20,9 @@ require("lazy").setup("plugins")
 
 
 
+=======
+vim.env.PATH = "/home/nishant/.npm-global/bin:" .. vim.env.PATH
+require("kurtsetup.map")
+require("kurtsetup.settings")
+require("kurtsetup.lazy")
+>>>>>>> Stashed changes
