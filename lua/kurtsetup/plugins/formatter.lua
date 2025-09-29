@@ -18,6 +18,11 @@ return {
                 lua = { "stylua" },
                 python = { "isort", "black" },
             },
+	    formatters = {
+                prettier = {
+                    args = { "--single-quote", "false" }, -- <--- disable single quotes
+                },
+    	    },
             format_on_save = {
                 lsp_fallback = true,
                 async = false,
