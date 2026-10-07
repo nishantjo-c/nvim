@@ -8,7 +8,6 @@ return {
     	"williamboman/mason.nvim",
     },
     config = function()
-        local nvim_lsp = require("lspconfig")
 
 	local on_attach = function(client, bufnr)
             -- format on save
@@ -25,14 +24,14 @@ return {
 
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-        nvim_lsp.ts_ls.setup({ on_attach = on_attach, capabilities = capabilities })
-        nvim_lsp.cssls.setup({ on_attach = on_attach, capabilities = capabilities })
-        nvim_lsp.tailwindcss.setup({ on_attach = on_attach, capabilities = capabilities })
-        nvim_lsp.html.setup({ on_attach = on_attach, capabilities = capabilities })
-        nvim_lsp.jsonls.setup({ on_attach = on_attach, capabilities = capabilities })
-        nvim_lsp.eslint.setup({ on_attach = on_attach, capabilities = capabilities })
-        nvim_lsp.pyright.setup({ on_attach = on_attach, capabilities = capabilities })
-        nvim_lsp.lua_ls.setup({
+        vim.lsp.config("ts_ls", { on_attach = on_attach, capabilities = capabilities })
+        vim.lsp.config("cssls", { on_attach = on_attach, capabilities = capabilities })
+        vim.lsp.config("tailwindcss", { on_attach = on_attach, capabilities = capabilities })
+        vim.lsp.config("html", { on_attach = on_attach, capabilities = capabilities })
+        vim.lsp.config("jsonls", { on_attach = on_attach, capabilities = capabilities })
+        vim.lsp.config("eslint", { on_attach = on_attach, capabilities = capabilities })
+        vim.lsp.config("pyright", { on_attach = on_attach, capabilities = capabilities })
+        vim.lsp.config("lua_ls", {
           on_attach = on_attach,
           capabilities = capabilities,
           settings = { Lua = { diagnostics = { globals = { "vim" } } } },
